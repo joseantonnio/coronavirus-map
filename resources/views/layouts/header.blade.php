@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>{{ env('APP_NAME') }}</title>
+
+    <link rel="canonical" href="{{ env('APP_URL') }}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="images/favicons/favicon.ico">
+    <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-lg-2 col-md-3 col-sm-12 mr-0" href="{{ route('home') }}">Coronavirus no Brasil</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <button class="nav-link btn btn-link" id="menu-toggle"><span data-feather="menu"></span></a>
+            </li>
+        </ul>
+        <input class="form-control form-control-dark w-90 m-2" type="text" id="search" placeholder="Buscar por cidade" aria-label="Buscar por cidade">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <button class="nav-link btn btn-link" data-toggle="modal" data-target=".modal-news"><span data-feather="bell"></span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-lg-2 col-md-3 bg-light sidebar" id="sidebar-wrapper">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() != 'home' ?: 'active' }}" href="{{ route('home') }}">
+                                <span data-feather="map-pin"></span>
+                                Mapa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ Route::currentRouteName() != 'data' ?: 'active' }}" href="{{ route('data') }}">
+                                <span data-feather="database"></span>
+                                Dados
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('news') }}">
+                                <span data-feather="globe"></span>
+                                Notícias
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Contribuir</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Em breve">
+                                <span data-feather="alert-circle"></span>
+                                Realizar correção
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Em breve">
+                                <span data-feather="x-octagon"></span>
+                                Informar um erro
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Fale Conosco</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"  data-toggle="tooltip" data-placement="bottom" title="Em breve! Fale comigo no Twitter @JunnyKx">
+                                <span data-feather="mail"></span>
+                                Contato
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('coffee') }}" target="_blank">
+                                <span data-feather="coffee"></span>
+                                Me pague um café
+                            </a>
+                        </li>
+                    </ul>
+
+                    @if (isset($infections))
+
+                        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Estatísticas</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                                <span class="nav-link" style="cursor: default;">
+                                    <span class="text-warning" data-feather="activity"></span>
+                                    {{ $infections->total_cases }} casos
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link" style="cursor: default;">
+                                    <span class="text-danger" data-feather="alert-triangle"></span>
+                                    {{ $infections->total_serious }} casos graves
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link" style="cursor: default;">
+                                    <span class="text-success" data-feather="smile"></span>
+                                    {{ $infections->total_recovered }} recuperações
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link" style="cursor: default;">
+                                    <span class="text-dark" data-feather="frown"></span>
+                                    {{ $infections->total_deaths }} mortes
+                                </span>
+                            </li>
+                            @if (isset($last_update))
+                                <li class="nav-item">
+                                    <span class="nav-link" style="cursor: default;" data-toggle="tooltip" data-placement="bottom" title="Última alteração">
+                                        <span class="text-info" data-feather="clock"></span>
+                                        {{ $last_update }}
+                                    </span>
+                                </li>
+                            @endif
+                        </ul>
+                    @endif
+                </div>
+            </nav>

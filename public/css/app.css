@@ -1,0 +1,322 @@
+body {
+  font-size: 0.875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+#coronamap {
+  height: 80vh;
+}
+
+.map-group {
+  width: 100px !important;
+  opacity: 0.8 !important;
+}
+
+.map-group div {
+  width: 100px !important;
+}
+
+.ui-menu {
+  z-index: 2060;
+}
+
+.nav-link {
+  font-size: 0.875rem !important;
+}
+
+/* entypo */
+
+[class*=entypo-]::before {
+  font-family: "entypo", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.share {
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  padding: 0;
+}
+
+.share span {
+  font-weight: 400;
+}
+
+.share li {
+  display: inline-block;
+}
+
+.share li a {
+  display: block;
+  width: 32px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-radius: 3px;
+  padding: 6px 0;
+  transition: 0.025s all ease-in-out;
+}
+
+.share li a:active {
+  border-bottom: 0;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.025);
+  transform: translateY(4px);
+}
+
+.share li.twitter a {
+  background-color: #00aced;
+  border-color: #0087ba;
+}
+
+.share li.twitter a:hover,
+.share li.twitter a:focus {
+  background-color: #21c2ff;
+  border-color: #00aced;
+}
+
+.share li.twitter a:active {
+  background-color: #0087ba;
+}
+
+.share li.whatsapp a {
+  background-color: #25d366;
+  border-color: #1da851;
+}
+
+.share li.whatsapp a:hover,
+.share li.whatsapp a:focus {
+  background-color: #4be083;
+  border-color: #25d366;
+}
+
+.share li.whatsapp a:active {
+  background-color: #1da851;
+}
+
+.share li.facebook a {
+  background-color: #3b5998;
+  border-color: #2d4373;
+}
+
+.share li.facebook a:hover,
+.share li.facebook a:focus {
+  background-color: #4c70ba;
+  border-color: #3b5998;
+}
+
+.share li.facebook a:active {
+  background-color: #2d4373;
+}
+
+.share li.linkedin a {
+  background-color: #0977b5;
+  border-color: #075784;
+}
+
+.share li.linkedin a:hover,
+.share li.linkedin a:focus {
+  background-color: #0b97e6;
+  border-color: #0977b5;
+}
+
+.share li.linkedin a:active {
+  background-color: #075784;
+}
+
+.share li.googleplus a {
+  background-color: #cc3732;
+  border-color: #a32c28;
+}
+
+.share li.googleplus a:hover,
+.share li.googleplus a:hover,
+.share li.googleplus a:focus {
+  background-color: #d75e5a;
+  border-color: #cc3732;
+}
+
+.share li.googleplus a:active {
+  background-color: #a32c28;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  /* Behind the navbar */
+  padding: 48px 0 0;
+  /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: default !important;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand {
+    text-align: center !important;
+  }
+
+  .sidebar {
+    position: relative;
+    display: none;
+    padding: 0;
+  }
+
+  .sidebar-sticky {
+    height: auto;
+  }
+}
+
+/*
+ * Content
+ */
+
+[role=main] {
+  padding-top: 133px;
+  /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+  [role=main] {
+    padding-top: 48px;
+    /* Space for fixed navbar */
+  }
+}
+
+@media (max-width: 767px) {
+  .fixed-top {
+    position: relative !important;
+  }
+
+  [role=main] {
+    padding-top: 0;
+    /* Space for fixed navbar */
+  }
+
+  #coronamap {
+    height: 100vh;
+  }
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar .form-control {
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+@media (min-width: 580px) and (max-width: 767px) {
+  .form-control {
+    width: 80%;
+  }
+}
+
+@media (min-width: 387px) and (max-width: 579px) {
+  .form-control {
+    width: 70%;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 386px) {
+  .form-control {
+    width: 50%;
+  }
+}
+
+@media (max-width: 239px) {
+  .form-control {
+    display: none;
+  }
+}
+
