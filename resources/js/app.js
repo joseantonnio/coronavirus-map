@@ -90,7 +90,7 @@ L.tileLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=7nt6l2Uh87
     attribution: 'Mapa pela comunidade &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagens por &copy; <a href="https://www.maptiler.com/copyright/">Map Tiler</a>',
     maxZoom: 11,
     minZoom: 4,
-    tileSize: 512,
+    tileSize: 256,
     zoomOffset: 0,
 }).addTo(coronamap);
 
