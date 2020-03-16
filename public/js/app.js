@@ -19349,8 +19349,8 @@ $("#search").autocomplete({
     return false;
   }
 });
-var southWest = L.latLng(-36.879621, -71.894531),
-    northEast = L.latLng(6.315299, -26.894531),
+var southWest = L.latLng(-64.774125, -134.824219),
+    northEast = L.latLng(24.527135, -19.160156),
     bounds = L.latLngBounds(southWest, northEast);
 
 if ($_GET['lat'] != undefined && $_GET['lng'] != undefined) {
