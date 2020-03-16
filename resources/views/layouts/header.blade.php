@@ -159,13 +159,13 @@
                             </li>
                             <li class="nav-item">
                                 <span class="nav-link" style="cursor: default;">
-                                    <span class="text-success" data-feather="smile"></span>
+                                    <span class="text-success" data-feather="sun"></span>
                                     {{ $infections->total_recovered }} recuperações
                                 </span>
                             </li>
                             <li class="nav-item">
                                 <span class="nav-link" style="cursor: default;">
-                                    <span class="text-dark" data-feather="frown"></span>
+                                    <span class="text-dark" data-feather="moon"></span>
                                     {{ $infections->total_deaths }} mortes
                                 </span>
                             </li>
