@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    
+
     <!-- Primary Meta Tags -->
     <title>Mapa do Coronavírus no Brasil - Conheça as cidades afetadas</title>
     <meta name="title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
@@ -14,14 +14,14 @@
     <meta property="og:url" content="{{ env('APP_URL') }}">
     <meta property="og:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
     <meta property="og:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
-    <meta property="og:image" content="{{ assets('images/cover.jpg') }}">
+    <meta property="og:image" content="{{ asset('images/cover.jpg') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ env('APP_URL') }}">
     <meta property="twitter:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
     <meta property="twitter:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
-    <meta property="twitter:image" content="{{ assets('images/cover.jpg') }}">
+    <meta property="twitter:image" content="{{ asset('images/cover.jpg') }}">
 
     <link rel="canonical" href="{{ env('APP_URL') }}">
 
