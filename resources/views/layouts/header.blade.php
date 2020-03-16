@@ -96,7 +96,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('news') }}">
+                            <a class="nav-link" href="/blog">
                                 <span data-feather="globe"></span>
                                 Notícias
                             </a>
