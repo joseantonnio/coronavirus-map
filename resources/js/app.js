@@ -77,7 +77,7 @@ $("#search").autocomplete({
 });
 
 var southWest = L.latLng(-64.774125, -134.824219),
-    northEast = L.latLng(24.527135, -19.160156),
+    northEast = L.latLng(43.834527, 7.207031),
     bounds = L.latLngBounds(southWest, northEast);
 
 if ($_GET['lat'] != undefined && $_GET['lng'] != undefined) {
