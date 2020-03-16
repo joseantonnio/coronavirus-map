@@ -3,11 +3,25 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>{{ env('APP_NAME') }}</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Mapa do Coronavírus no Brasil - Conheça as cidades afetadas</title>
+    <meta name="title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
+    <meta name="description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ env('APP_URL') }}">
+    <meta property="og:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
+    <meta property="og:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
+    <meta property="og:image" content="{{ assets('images/cover.jpg') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ env('APP_URL') }}">
+    <meta property="twitter:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
+    <meta property="twitter:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
+    <meta property="twitter:image" content="{{ assets('images/cover.jpg') }}">
 
     <link rel="canonical" href="{{ env('APP_URL') }}">
 
@@ -37,7 +51,7 @@
 
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-lg-2 col-md-3 col-sm-12 mr-0" href="{{ route('home') }}">Coronavirus no Brasil</a>
+        <a class="navbar-brand col-lg-2 col-md-3 col-sm-12 mr-0" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 <button class="nav-link btn btn-link" id="menu-toggle"><span data-feather="menu"></span></a>
