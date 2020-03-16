@@ -19349,18 +19349,11 @@ $("#search").autocomplete({
     return false;
   }
 });
-var southWest = L.latLng(-64.774125, -134.824219),
-    northEast = L.latLng(24.527135, -19.160156),
-    bounds = L.latLngBounds(southWest, northEast);
 
 if ($_GET['lat'] != undefined && $_GET['lng'] != undefined) {
-  var coronamap = L.map('coronamap', {
-    maxBounds: bounds
-  }).setView([$_GET['lat'], $_GET['lng']], 11);
+  var coronamap = L.map('coronamap').setView([$_GET['lat'], $_GET['lng']], 11);
 } else {
-  var coronamap = L.map('coronamap', {
-    maxBounds: bounds
-  }).setView([-15.5819581, -53.0541564], 4);
+  var coronamap = L.map('coronamap').setView([-15.5819581, -53.0541564], 4);
 }
 
 L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png	', {
