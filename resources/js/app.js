@@ -143,7 +143,7 @@ $.ajax({
                 var color = "#fd9c73";
             }
 
-            var m = L.circleMarker([markers[i].city.lat, markers[i].city.lng], { color: "#e74c3c", radius: markers[i].city.radius, cases: markers[i].cases }).bindPopup(popup);
+            var m = L.circleMarker([markers[i].city.lat, markers[i].city.lng], { color: color, radius: markers[i].city.radius, cases: markers[i].cases }).bindPopup(popup);
             markerClusters.addLayer(m);
         }
 
