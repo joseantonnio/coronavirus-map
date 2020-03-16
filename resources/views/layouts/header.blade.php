@@ -171,7 +171,7 @@
                             </li>
                             @if (isset($last_update))
                                 <li class="nav-item">
-                                    <span class="nav-link" style="cursor: default;" data-toggle="tooltip" data-placement="bottom" title="Última alteração">
+                                    <span class="nav-link" style="cursor: default;" data-toggle="tooltip" data-placement="bottom" title="Última atualização de dados">
                                         <span class="text-info" data-feather="clock"></span>
                                         {{ $last_update }}
                                     </span>
