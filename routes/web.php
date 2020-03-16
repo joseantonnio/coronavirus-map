@@ -26,8 +26,6 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/data', 'HomeController@data')->name("data");
 
-Route::redirect('/blog', 'https://blog.mapadocoronavirus.com/')->name('news');
-
 Route::get('/fix', function () {
     return view('welcome');
 })->name("fix");
