@@ -47,7 +47,19 @@
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="theme-color" content="#272b30">
 
+    <!-- Custom CSS -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61838464-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-61838464-3');
+    </script>
+
 </head>
 
 <body>
