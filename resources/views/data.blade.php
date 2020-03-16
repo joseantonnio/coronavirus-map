@@ -23,6 +23,12 @@
                 </tr>
             </thead>
             <tbody>
+                @if ($data->count() < 1)
+                    <tr>
+                        <td class="text-center" colspan="6">Não há dados para serem exibidos...</td>
+                    </tr>
+                @endif
+
                 @foreach ($data as $infection)
                     <tr>
                         <td>{{ $infection[0] }}</td>
