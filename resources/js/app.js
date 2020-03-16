@@ -86,7 +86,7 @@ if ($_GET['lat'] != undefined && $_GET['lng'] != undefined) {
     var coronamap = L.map('coronamap', { maxBounds: bounds }).setView([-15.5819581, -53.0541564], 4);
 }
 
-L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png	', {
+L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: 'Mapa pela comunidade &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagens por <a href="https://maps.wikimedia.org/">Wikimedia Maps</a>',
     maxZoom: 11,
     minZoom: 4,

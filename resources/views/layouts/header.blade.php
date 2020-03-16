@@ -16,14 +16,14 @@
     <meta property="og:url" content="{{ env('APP_URL') }}">
     <meta property="og:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
     <meta property="og:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
-    <meta property="og:image" content="{{ asset('images/cover.jpg') }}">
+    <meta property="og:image" content="{{ secure_asset('images/cover.jpg') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ env('APP_URL') }}">
     <meta property="twitter:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
     <meta property="twitter:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
-    <meta property="twitter:image" content="{{ asset('images/cover.jpg') }}">
+    <meta property="twitter:image" content="{{ secure_asset('images/cover.jpg') }}">
 
     <link rel="canonical" href="{{ env('APP_URL') }}">
 
@@ -39,15 +39,15 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('images/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ secure_asset('images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ secure_asset('site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ secure_asset('images/safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="theme-color" content="#272b30">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
