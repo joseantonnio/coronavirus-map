@@ -126,7 +126,13 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"  data-toggle="tooltip" data-placement="bottom" title="Em breve! Fale comigo no Twitter @JunnyKx">
+                            <a class="nav-link" href="https://t.me/mapadocoronavirus" target="_blank">
+                                <span data-feather="message-circle"></span>
+                                Chat no Telegram
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/junnykx" target="_blank">
                                 <span data-feather="mail"></span>
                                 Contato
                             </a>
