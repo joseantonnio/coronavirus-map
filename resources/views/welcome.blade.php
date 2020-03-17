@@ -14,7 +14,7 @@
         <strong>O mapa agora é atualizado em tempo real com as informações enviadas pelos usuários</strong>, que são
         conferidas e atualizadas manualmente de duas a três vezes ao dia. Ajude você também o trabalho de atualização 
         <a href="{{ route('contribute.create') }}">enviando novos casos</a> em sua cidade ou região! A última 
-        atualização foi em {{ $last_update }} por Nome.
+        atualização foi em {{ $last_update }}.
     </div>
 
     <div id="coronamap"></div>
