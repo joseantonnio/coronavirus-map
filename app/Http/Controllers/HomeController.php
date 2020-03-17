@@ -37,40 +37,12 @@ class HomeController extends Controller
         }))->select("id", "name", "lat", "lng", "state_id")->where("name", "like", '%' . $search . '%')->limit(200)->get();
 
         $result = $query->map(function ($city) {
+            $data['id'] = $city->id;
             $data['value'] = $city->lat . ',' . $city->lng;
             $data['label'] = $city->name . ', ' . $city->state->uf;
             return $data;
         });
 
         return response()->json($result);
-    }
-
-    public function infections()
-    {
-        $result = Infection::with(array('city' => function ($subquery) {
-            $subquery->select('id', 'name', 'lat', 'lng', 'radius');
-        }))->select("id", "city_id", "cases", "deaths", "recovered", "serious", "first_case")->get();
-
-        return response()->json($result);
-    }
-
-    public function data()
-    {
-        $query = Infection::with(array('city' => function ($subquery) {
-            $subquery->with('state')->select('id', 'name', 'state_id');
-        }))->select("id", "city_id", "cases", "deaths", "recovered", "serious", "first_case")->get();
-
-        $infections = $query->map(function ($infection) {
-            return [
-                $infection->city->name . ', ' . $infection->city->state->uf,
-                $infection->cases,
-                $infection->serious,
-                $infection->recovered,
-                $infection->deaths,
-                $infection->first_case->translatedFormat('d \d\e F \d\e Y'),
-            ];
-        });
-        
-        return view('data', ['data' => $infections]);
     }
 }
