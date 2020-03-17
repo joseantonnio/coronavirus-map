@@ -10,19 +10,70 @@
         </div>
     </div>
 
-    <?php if (isset($_GET['donate']) && $_GET['donate'] == 'completed') : ?>
-        <div class="alert alert-success" role="alert">
-            <img src="https://media.giphy.com/media/xUOwG5aFxxcLTVCaeQ/source.gif" height="80px" />
-            <strong>Delícia!!!</strong> Muito obrigado pelo copão café forte e quente. Você fez um desenvolvedor muito mais feliz hoje!
-        </div>
-    <?php elseif (isset($_GET['donate']) && $_GET['donate'] == 'cancel') : ?>
-        <div class="alert alert-danger" role="alert">
-            <img src="https://media.giphy.com/media/JreLOq5hxba4wYV0Jj/giphy.gif" height="80px" />
-            <strong>Que pena!</strong> Você iria deixar um desenvolvedor muito feliz com aquele cafézinho...
-        </div>
-    <?php endif; ?>
-
     <div id="coronamap"></div>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Sobre a COVID-19</h1>
+    </div>
+
+    <p>
+        O COVID-19 é um vírus da família dos <i>Coronaviridae</i>.
+        Segundo a 
+        <a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank">
+            Organização Mundial da Saúde (OMS)
+        </a>, 
+        os Coronavírus são uma grande família de vírus que podem causar doenças em animais ou humanos.
+    </p>
+    <p>
+        Nos humanos, vários vírus dessa família causam infecções respiratórias que variam desde um resfriado comum a doenças mais graves, 
+        como a Síndrome Respiratória do Oriente Médio (MERS) e a Síndrome Respiratória Aguda Grave (SARS).
+    </p>
+    <p>
+        O coronavírus descoberto mais recentemente causa a doença COVID-19, que é a atual responsável pela pandemia 
+        <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/11/oms-declara-pandemia-de-coronavirus.ghtml" target="_blank">
+            declarada pela própria OMS
+        </a> no dia 11 de março de 2020.
+    </p>
+    <p>
+        <strong>Você pode ter acesso a muitas informações sobre a doença como:</strong> prevenção do contágio, tratamento, 
+        plano de contingência e muito mais acessando o 
+        <a href="http://coronavirus.saude.gov.br/" target="_blank">
+            portal do Ministério da Saúde
+        <a> 
+        sobre o COVID-19.
+    </p>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">De onde vêm os dados contidos neste mapa?</h1>
+    </div>
+
+    <p>
+        Os dados contidos neste mapa vêm de fontes confiáveis e públicas, como G1 Bem Estar, Abril Saúde, El País, 
+        Estadão, entre outros. Também consultamos portais de notícia municipais, sempre prezando pela qualidade, 
+        confiabilidade e validando a informação.
+    </p>
+    <p>
+        Além disso, utilizamos ferramentas de dados para comparação, como Worldometer, Novel Coronavirus Situation da 
+        Organização Mundial da Saúde, Plataforma IVIS do Ministério da Saúde e as tabelas com dados estaduais 
+        atualizados diariamente no G1 Bem Estar.
+    </p>
+    <p>
+        Outra origem de dados são os próprios usuários que utilizam a ferramenta através da seção "contribuir" no menu 
+        lateral ou em nosso grupo no Telegram. Os dados enviados passam por uma verificação de qualidade e são aceitos 
+        apenas se encaminhados com fontes sólidas e confiáveis, seguindo os mesmos critérios citados acima.
+    </p>
+    <p>
+        Entretanto, você não deve ter os dados deste mapa como uma verdade absoluta. Utilize-os como uma de várias
+        outras fontes confiáveis que buscam sempre se manter atualizadas e com informações coerentes.
+    </p>
+
+    <div class="pt-3 pb-2 mb-3 border-top text-right">
+        <p class="text-muted">
+            Ferramenta desenvolvida por <a href="https://www.linkedin.com/in/joseantonnio/" target="_blank">José Antonio</a>.
+            <br />
+            Feito com &hearts; em São Carlos, a capital da tecnologia. Com o apoio da comunidade.            
+        </p>
+    </div>
 </main>
 
 @include('layouts.share')

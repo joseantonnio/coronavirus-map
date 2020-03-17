@@ -132,7 +132,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://twitter.com/junnykx" target="_blank">
+                            <a class="nav-link" href="https://www.linkedin.com/in/joseantonnio/" target="_blank">
                                 <span data-feather="mail"></span>
                                 Contato
                             </a>
