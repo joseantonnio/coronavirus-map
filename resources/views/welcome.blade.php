@@ -74,14 +74,6 @@
         outras fontes confiáveis que buscam sempre se manter atualizadas e com informações coerentes.
     </p>
 
-    <div class="pt-3 pb-2 mb-3 border-top text-right">
-        <p class="text-muted">
-            Ferramenta desenvolvida por <a href="https://www.linkedin.com/in/joseantonnio/" target="_blank">José Antonio</a>.
-            <br />
-            Feito com &hearts; em São Carlos, a capital da tecnologia. Com o apoio da comunidade.            
-        </p>
-    </div>
-
     @include('layouts.share')
 
     @include('layouts.news')

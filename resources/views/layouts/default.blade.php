@@ -105,6 +105,12 @@
                                 Notícias
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://m.do.co/c/965f168e889e" target="_blank">
+                                <span data-feather="server"></span>
+                                Ganhe $100 em hospedagem
+                            </a>
+                        </li>
                     </ul>
 
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -132,7 +138,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="https://t.me/contribuicoescovid19" target="_blank">
                                 <span data-feather="target"></span>
-                                Contribuições ao vivo
+                                Contribuições em tempo real
                             </a>
                         </li>
                     </ul>
@@ -193,7 +199,7 @@
                             </li>
                             @if (isset($last_update))
                                 <li class="nav-item">
-                                    <span class="nav-link" style="cursor: default;" data-toggle="tooltip" data-placement="bottom" title="Última atualização de dados">
+                                    <span class="nav-link" style="cursor: default;" data-toggle="tooltip" data-placement="bottom" title="Última atualização">
                                         <span class="text-info" data-feather="clock"></span>
                                         {{ $last_update }}
                                     </span>
@@ -206,6 +212,15 @@
 
             <main role="main" class="col-md-9 col-lg-10 ml-sm-auto px-4">
                 @yield('content')
+                
+                <div class="pt-3 pb-2 mb-3 border-top text-right">
+                    <p class="text-muted">
+                        Desenvolvida por <a href="https://www.linkedin.com/in/joseantonnio/" target="_blank">José Antonio</a>. 
+                        Hospedagem por <a href="https://m.do.co/c/965f168e889e" target="_blank">Digital Ocean</a>.
+                        <br />
+                        Feito com &hearts; em São Carlos, a capital da tecnologia. Com o apoio da comunidade.            
+                    </p>
+                </div>
             </main>
 
         </div>
