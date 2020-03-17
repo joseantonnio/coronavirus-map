@@ -1,6 +1,6 @@
-@include('layouts.header')
+@extends('layouts.default')
 
-<main role="main" class="col-md-9 col-lg-10 ml-sm-auto px-4">
+@section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Visão Geral</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
@@ -74,10 +74,12 @@
             Feito com &hearts; em São Carlos, a capital da tecnologia. Com o apoio da comunidade.            
         </p>
     </div>
-</main>
 
-@include('layouts.share')
+    @include('layouts.share')
 
-@include('layouts.news')
+    @include('layouts.news')
+@endsection
 
-@include('layouts.footer')
+@section('scripts')
+<script src="{{ asset('js/map.js') }}"></script>
+@endsection
