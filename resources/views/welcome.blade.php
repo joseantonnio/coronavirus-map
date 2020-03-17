@@ -10,6 +10,12 @@
         </div>
     </div>
 
+    <div class="alert alert-primary" role="alert">
+        O mapa não é atualizado em tempo real, as informações são inseridas manualmente de duas a três vezes ao dia. 
+        Você pode ajudar o trabalho de atualização <a href="{{ route('contribute.create') }}">enviando novos casos</a> 
+        em sua cidade ou região! A última atualização foi em {{ $last_update }}.
+    </div>
+
     <div id="coronamap"></div>
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
