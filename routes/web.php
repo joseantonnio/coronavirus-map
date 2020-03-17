@@ -34,16 +34,12 @@ Route::get('/error', function () {
     return view('welcome');
 })->name("error");
 
-Route::get('/infection', function () {
-    return view('welcome');
-})->name("new-case");
-
 Route::redirect('/coffee', 'https://pag.ae/blkPnYf')->name('coffee');
 
 Route::get('/cancel', function () {
     return view('sad');
-})->name("paypal-cancel");
+})->name("donate-cancel");
 
 Route::get('/completed', function () {
     return view('thanks');
-})->name("paypal-completed");
+})->name("donate-completed");
