@@ -15,7 +15,7 @@ class HomeController extends Controller
             DB::raw('sum(cases) as total_cases, sum(deaths) as total_deaths, sum(serious) as total_serious, sum(recovered) as total_recovered')
         )->first();
 
-        $response = Array();
+        $response = [];
 
         if (!is_null($last_infection)) {
             $response['last_update'] = $last_infection->updated_at->format("d/m/Y H:m:s");

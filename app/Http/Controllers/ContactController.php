@@ -57,7 +57,7 @@ class ContactController extends Controller
 
         $sources = strip_tags($request->sources);
         $sources = addslashes($sources);
-        $infection->sources .= filter_var($sources, FILTER_SANITIZE_STRING);
+        $infection->sources .= PHP_EOL . PHP_EOL . filter_var($sources, FILTER_SANITIZE_STRING);
         
         if (empty($infection->first_case)) {
             $infection->first_case = $request->first_case;
