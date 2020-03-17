@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Rotas de API
 
 Route::middleware(['check.ip'])->group(function () {
-    Route::get('/cities', 'HomeController@cities');
+    Route::get('/cities', 'CityController@index');
     Route::get('/infections', 'InfectionController@index');
 });
 
