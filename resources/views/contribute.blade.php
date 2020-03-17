@@ -28,13 +28,21 @@
 <form action="/contribute" method="POST">
     @csrf
     <input type="hidden" name="infection_id" id="infection_id">
-    <input type="hidden" name="recaptcha_response" id="recaptcha_response">
+    <input type="hidden" name="city_id" id="city_id">
+    <input type="hidden" name="recaptcha_response" id="recaptcha_response" {{ !\App::environment('local') ?: 'value=recaptcha' }}>
 
     <div class="row">
         <div class="form-group col-12">
             <label for="name">Nome *</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Nome completo, primeiro nome ou apelido" required>
             <small id="nameHelp" class="form-text text-muted">Será adicionado nos créditos do site</small>
+        </div>
+
+        <div class="form-group col-12">
+            <label for="email">E-mail *</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Ex. seu@email.com.br" required>
+            <small id="emailHelp" class="form-text text-muted">Não será publicado, utilizado para SPAM ou qualquer outra 
+                coisa do tipo! Será utilizado apenas para contato, se necessário.</small>
         </div>
         
         <div class="form-group col-12">
