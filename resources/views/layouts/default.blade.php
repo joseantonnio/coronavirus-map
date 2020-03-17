@@ -5,24 +5,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <?php
+        $the_title = isset($title) ? $title : 'Mapa do Coronavírus no Brasil - Conheça as cidades afetadas';
+        $the_description = isset($description) ? $description : 'Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!'
+    ?>
     <!-- Primary Meta Tags -->
-    <title>Mapa do Coronavírus no Brasil - Conheça as cidades afetadas</title>
-    <meta name="title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
-    <meta name="description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
+    <title>{{ $the_title }}</title>
+    <meta name="title" content="{{ $the_title }}">
+    <meta name="description" content="{{ $the_description }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ env('APP_URL') }}">
-    <meta property="og:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
-    <meta property="og:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
+    <meta property="og:title" content="{{ $the_title }}">
+    <meta property="og:description" content="{{ $the_description }}">
     <meta property="og:image" content="{{ secure_asset('images/cover.jpg') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ env('APP_URL') }}">
-    <meta property="twitter:title" content="Mapa do Coronavírus no Brasil - Conheça as cidades afetadas">
-    <meta property="twitter:description" content="Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!">
+    <meta property="twitter:title" content="{{ $the_title }}">
+    <meta property="twitter:description" content="{{ $the_description }}">
     <meta property="twitter:image" content="{{ secure_asset('images/cover.jpg') }}">
 
     <link rel="canonical" href="{{ env('APP_URL') }}">
