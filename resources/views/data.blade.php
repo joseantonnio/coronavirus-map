@@ -1,3 +1,8 @@
+<?php 
+    $title = "Tabela de Dados - Mapa do Coronavírus no Brasil";
+    $description = "Confira todas as informações contidas no Mapa do Coronavírus no Brasil em uma tabela para uma visualização mais limpa dos dados!"
+?>
+
 @extends('layouts.default')
 
 @section('content')

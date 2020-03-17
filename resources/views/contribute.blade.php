@@ -1,3 +1,8 @@
+<?php 
+    $title = "Contribuir - Mapa do Coronavírus no Brasil";
+    $description = "Faça parte da comunidade do Mapa do Coronavírus no Brasil atualizando as informações do mapa e enviando mais fontes que comprovem os dados.";
+?>
+
 @extends('layouts.default')
 
 @section('content')
