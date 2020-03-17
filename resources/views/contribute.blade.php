@@ -17,10 +17,10 @@
     </div>
 @endif
 
-@if (isset($success))
+@if (isset($success) && $success)
     <div class="alert alert-success">
         <ul>
-            {{ $success }}
+            Sua contribuição foi enviada com sucesso. Muito obrigado!
         </ul>
     </div>
 @endif
