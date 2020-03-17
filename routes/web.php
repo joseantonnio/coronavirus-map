@@ -30,6 +30,8 @@ Route::get('/data', 'InfectionController@index')->name("data");
 Route::get('/contribute', 'ContactController@createContribution')->name("contribute.create");
 Route::post('/contribute', 'ContactController@storeContribution')->name("contribute.store");
 
+Route::get('/contributors', 'HomeController@contributors')->name('contributors');
+
 Route::get('/error', function () {
     return view('welcome');
 })->name("error");

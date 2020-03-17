@@ -112,7 +112,7 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contribute.create') }}">
+                            <a class="nav-link {{ Route::currentRouteName() != 'contribute.create' ?: 'active' }}" href="{{ route('contribute.create') }}">
                                 <span data-feather="alert-circle"></span>
                                 Realizar correção
                             </a>
@@ -124,7 +124,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/blog/colaboradores/">
+                            <a class="nav-link {{ Route::currentRouteName() != 'contributors' ?: 'active' }}" href="{{ route('contributors') }}">
                                 <span data-feather="heart"></span>
                                 Colaboradores
                             </a>

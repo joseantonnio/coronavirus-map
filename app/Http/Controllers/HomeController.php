@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Infection;
+use App\Contributor;
 
 class HomeController extends Controller
 {
@@ -26,5 +27,12 @@ class HomeController extends Controller
         }
         
         return view('welcome', $response);
+    }
+
+    public function contributors()
+    {
+        $contributors = Contributor::select('name')->distinct()->get();
+        
+        return view('contributors', ['contributors' => $contributors]);
     }
 }
