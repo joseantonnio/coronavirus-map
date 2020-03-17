@@ -127,7 +127,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/blog/colaboradores/">
+                            <a class="nav-link" href="https://t.me/contribuicoescovid19" target="_blank">
                                 <span data-feather="target"></span>
                                 Contribuições em tempo real
                             </a>
