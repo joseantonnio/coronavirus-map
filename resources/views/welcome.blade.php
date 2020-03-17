@@ -17,7 +17,7 @@
     </div>
 
     <p>
-        O COVID-19 é um vírus da família dos <i>Coronaviridae</i>.
+        A COVID-19 é uma doença causada por um vírus da família dos <i>Coronaviridae</i>.
         Segundo a 
         <a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses" target="_blank">
             Organização Mundial da Saúde (OMS)
