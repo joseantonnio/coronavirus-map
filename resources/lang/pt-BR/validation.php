@@ -177,6 +177,14 @@ return [
         'year'      => 'ano',
         'description' => 'descrição',
         'password_confirmation' => 'confirmação da senha',
+        'cases' => 'casos',
+        'serious' => 'casos graves',
+        'deaths' => 'mortes',
+        'recovered' => 'recuperações',
+        'first_case' => 'primeiro caso',
+        'sources' => 'fontes',
+        'infection_id' => 'identificador de infecção',
+        'recaptcha_response' => 'reCAPTCHA'
     ],
 
 ];
