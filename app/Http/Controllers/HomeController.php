@@ -18,7 +18,7 @@ class HomeController extends Controller
         $response = [];
 
         if (!is_null($last_infection)) {
-            $response['last_update'] = $last_infection->updated_at->format("d/m/Y H:m:s");
+            $response['last_update'] = $last_infection->updated_at->format("d/m/Y H:i:s");
         }
 
         if ($infections->count() > 0) {
