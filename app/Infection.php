@@ -22,4 +22,12 @@ class Infection extends Model
     {
         return $this->belongsTo('App\City');
     }
+
+    /**
+     * Get the contributors of the infection count.
+     */
+    public function contributors()
+    {
+        return $this->belongsToMany('App\Contributor');
+    }
 }

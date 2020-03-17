@@ -36,6 +36,7 @@ $("#city").autocomplete({
 
                 if (data.infections.length > 0) {
                     $('#infection_id').val(data.infections[0].id);
+                    $('#city_id').val(ui.item.id);
                     $('#cases').val(data.infections[0].cases);
                     $('#serious').val(data.infections[0].serious);
                     $('#deaths').val(data.infections[0].deaths);
@@ -43,7 +44,7 @@ $("#city").autocomplete({
                     $('#first_case').val(moment(data.infections[0].first_case).format('YYYY-MM-DD'));
                     $('#sources').val('');
                 } else {
-                    $('#infection_id').val("N/A (nova infecção)");
+                    $('#infection_id').val("-1");
                     $('#cases').val('0');
                     $('#serious').val('0');
                     $('#deaths').val('0');
@@ -51,6 +52,8 @@ $("#city").autocomplete({
                     $('#first_case').val('');
                     $('#sources').val('');
                 }
+
+                $('#city_id').val(ui.item.id);
             },
             error: function() {
                 alert('Erro ao obter os dados da cidade!');
