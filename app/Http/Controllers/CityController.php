@@ -23,4 +23,16 @@ class CityController extends Controller
 
         return response()->json($result);
     }
+
+    public function show($id)
+    {
+        $query = City::with(array("infections" => function ($subquery) {
+            $subquery->select("id", "city_id", "cases", "deaths", "recovered", "serious", "first_case");
+        }, "state" => function ($subquery) {
+            $subquery->select("id", "uf");
+        }))->select('id', 'name', "state_id")->findOrFail($id);
+        
+
+        return response()->json($query);
+    }
 }
