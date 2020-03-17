@@ -40,7 +40,7 @@
         <a href="http://coronavirus.saude.gov.br/" target="_blank">
             portal do Ministério da Saúde
         <a> 
-        sobre o COVID-19.
+        sobre a COVID-19.
     </p>
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
