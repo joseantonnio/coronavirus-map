@@ -48,6 +48,7 @@
     <meta name="theme-color" content="#272b30">
 
     <!-- Custom CSS -->
+    <link href="{{ asset('css/stati.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
