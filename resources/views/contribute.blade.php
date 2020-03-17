@@ -9,6 +9,10 @@
     Os campos com asterisco (*) são obrigatórios!
 </p>
 
+<div class="alert alert-warning">
+    <strong>Atenção!</strong> Casos são considerados apenas confirmados. Suspeitas não entram como informação no mapa, por hora.
+</div>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         @foreach ($errors->all() as $error)
@@ -18,6 +22,7 @@
 @endif
 
 @if (isset($success) && $success)
+    <div class="alert alert-success">
         Sua contribuição foi enviada com sucesso. Muito obrigado!
     </div>
 @endif
