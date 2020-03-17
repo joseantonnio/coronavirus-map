@@ -132,7 +132,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="https://t.me/contribuicoescovid19" target="_blank">
                                 <span data-feather="target"></span>
-                                Contribuições em tempo real
+                                Contribuições ao vivo
                             </a>
                         </li>
                     </ul>
