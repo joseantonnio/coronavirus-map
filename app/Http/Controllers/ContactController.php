@@ -88,11 +88,6 @@ class ContactController extends Controller
             Log::debug($text);
         }
  
-        return redirect()
-        ->back()
-        ->with(
-            'success',
-            'Obrigado pela contribuição! Os dados foram enviados com sucesso e serão avaliados o mais rápido possível.'
-        );
+        return view('contribute', ['success' => true]);
     }
 }
