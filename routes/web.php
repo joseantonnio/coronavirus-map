@@ -17,18 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['check.ip'])->group(function () {
     Route::get('/cities', 'HomeController@cities');
-    Route::get('/infections', 'HomeController@infections');
+    Route::get('/infections', 'InfectionController@index');
 });
 
 // Rotas WEB
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/data', 'HomeController@data')->name("data");
+Route::get('/data', 'InfectionController@index')->name("data");
 
-Route::get('/fix', function () {
-    return view('welcome');
-})->name("fix");
+Route::get('/contribute', 'ContactController@sendContribution')->name("contribute");
 
 Route::get('/error', function () {
     return view('welcome');
@@ -37,14 +35,6 @@ Route::get('/error', function () {
 Route::get('/infection', function () {
     return view('welcome');
 })->name("new-case");
-
-Route::get('/death', function () {
-    return view('welcome');
-})->name("new-death");
-
-Route::get('/contact', function () {
-    return view('welcome');
-})->name("contact");
 
 Route::redirect('/coffee', 'https://pag.ae/blkPnYf')->name('coffee');
 
