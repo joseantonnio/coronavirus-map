@@ -18,14 +18,14 @@ body {
     user-select: none;
 }
 
+#coronamap {
+    height: 80vh;
+}
+
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
-}
-
-#coronamap {
-    height: 80vh;
 }
 
 .map-group {
@@ -231,13 +231,11 @@ $whatsapp: #25d366;
 
 [role="main"] {
     padding-top: 133px;
-    /* Space for fixed navbar */
 }
 
 @media (min-width: 768px) {
     [role="main"] {
         padding-top: 48px;
-        /* Space for fixed navbar */
     }
 }
 
@@ -247,7 +245,7 @@ $whatsapp: #25d366;
     }
     [role="main"] {
         padding-top: 0;
-        /* Space for fixed navbar */
+        margin: 0 5%;
     }
 }
 
