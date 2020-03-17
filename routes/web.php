@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['check.ip'])->group(function () {
     Route::get('/cities', 'CityController@index');
+    Route::get('/cities/{id}', 'CityController@show');
     Route::get('/infections', 'InfectionController@index');
 });
 
@@ -26,7 +27,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/data', 'InfectionController@index')->name("data");
 
-Route::get('/contribute', 'ContactController@sendContribution')->name("contribute");
+Route::get('/contribute', 'ContactController@createContribution')->name("contribute.create");
+Route::post('/contribute', 'ContactController@storeContribution')->name("contribute.store");
 
 Route::get('/error', function () {
     return view('welcome');
