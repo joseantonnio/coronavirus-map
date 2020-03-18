@@ -32,6 +32,33 @@ $("#menu-toggle").click(function(e) {
     }
 });
 
+$.ajax({
+    url: "/blog/wp-json/wp/v2/posts?tags=4",
+    type: 'get',
+    dataType: 'json',
+    success: function(data) {
+        var first = true,
+            $news = $("#news")[0],
+            news_count = 0;
+
+        data.forEach(function(element) {
+            if (moment().diff(moment(element.date), 'days') == 0) {
+                if (first) {
+                    first = false;
+                    $news.innerHTML = "";
+                }
+                $news.innerHTML += '<li class="list-group-item"><a class="h7 text-dark" href="' + element.link + '">' + element.title.rendered + '</a></li>';
+                news_count++;
+            }
+        });
+
+        if (news_count > 0) {
+            $('#news-count').text(news_count);
+            $('#news-count').show();
+        }
+    }
+});
+
 $("#search").autocomplete({
     delay: 500,
     source: function(request, response) {

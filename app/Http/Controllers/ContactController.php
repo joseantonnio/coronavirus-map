@@ -71,7 +71,7 @@ class ContactController extends Controller
         $infection->save();
         $infection->contributors()->attach($contributor);
 
-        $text = "Uma nova correção foi enviada!\n"
+        $text = "Uma nova contribuição foi enviada!\n"
                 . "<b>Nome do usuário: </b>$request->name\n"
                 . "<b>Cidade para atualizar: </b>$request->city\n"
                 . "<b>Casos: </b>$request->cases\n"
