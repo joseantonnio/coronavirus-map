@@ -1,3 +1,8 @@
+<?php 
+    $title = "Doação Cancelada - Mapa do Coronavírus no Brasil";
+    $description = "Você iria deixar um desenvolvedor muito feliz com aquele cafézinho...";
+?>
+
 @extends('layouts.default')
 
 @section('content')

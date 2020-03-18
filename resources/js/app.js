@@ -21,13 +21,13 @@ $("#menu-toggle").click(function(e) {
     e.preventDefault();
     if ($("#sidebar-wrapper").is(":hidden")) {
         $("#sidebar-wrapper").show();
-        $("main").addClass('col-md-9');
-        $("main").addClass('col-lg-10');
+        $("main").addClass('col-md-8');
+        $("main").addClass('col-lg-9');
         $("main").removeClass('col-12');
     } else {
         $("#sidebar-wrapper").hide();
-        $("main").removeClass('col-md-9');
-        $("main").removeClass('col-lg-10');
+        $("main").removeClass('col-md-8');
+        $("main").removeClass('col-lg-9');
         $("main").addClass('col-12');
     }
 });

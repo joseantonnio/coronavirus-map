@@ -1,20 +1,61 @@
 @extends('layouts.default')
 
 @section('content')
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Visão Geral</h1>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3">
         <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target=".modal-share"><span data-feather="share"></span> Compartilhar</button>
+            <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-primary"><span data-feather="plus"></span> Contribuir</a>
+                <button type="button" class="btn btn-sm btn-outline-info" data-toggle="collapse" href="#collapseStats" role="button" aria-expanded="false" aria-controls="collapseStats"><span data-feather="activity"></span> Estatísticas</button>
+            </div>
+        </div>
+
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target=".modal-share"><span data-feather="share"></span> Compartilhar</button>
             </div>
         </div>
     </div>
 
-    <div class="alert alert-primary" role="alert">
-        <strong>O mapa agora é atualizado em tempo real com as informações enviadas pelos usuários</strong>, que são
-        conferidas e atualizadas manualmente de duas a três vezes ao dia. Ajude você também o trabalho de atualização 
-        <a href="{{ route('contribute.create') }}">enviando novos casos</a> em sua cidade ou região! A última 
-        atualização foi em {{ $last_update }} por Nome.
+    <div class="row mb-3 collapse" id="collapseStats">
+        <div class="col-lg-3 col-md-6">
+            <div class="stati bg-sun_flower">
+                <i class="fas fa-diagnoses fa-2x"></i>
+                <div>
+                    <b>{{ $infections->total_cases }}</b>
+                    <span class="small">Confirmados</span>
+                </div> 
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="stati bg-carrot">
+                <i class="fas fa-procedures fa-2x"></i>
+                <div>
+                    <b>{{ $infections->total_serious }}</b>
+                    <span class="small">Graves</span>
+                </div> 
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="stati bg-nephritis">
+                <i class="fas fa-heartbeat fa-2x"></i>
+                <div>
+                    <b>{{ $infections->total_recovered }}</b>
+                    <span class="small">Recuperados</span>
+                </div> 
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="stati bg-pomegranate">
+                <i class="fas fa-cross fa-2x"></i>
+                <div>
+                    <b>{{ $infections->total_deaths }}</b>
+                    <span class="small">Mortes</span>
+                </div> 
+            </div>
+        </div>
+        <div class="col-12 text-right">
+            <span class="text-muted small">Última atualização em {{ $last_update }}</span>
+        </div>
     </div>
 
     <div id="coronamap"></div>
@@ -46,7 +87,7 @@
         plano de contingência e muito mais acessando o 
         <a href="http://coronavirus.saude.gov.br/" target="_blank">
             portal do Ministério da Saúde
-        <a> 
+        </a> 
         sobre a COVID-19.
     </p>
 
@@ -73,14 +114,6 @@
         Entretanto, você não deve ter os dados deste mapa como uma verdade absoluta. Utilize-os como uma de várias
         outras fontes confiáveis que buscam sempre se manter atualizadas e com informações coerentes.
     </p>
-
-    <div class="pt-3 pb-2 mb-3 border-top text-right">
-        <p class="text-muted">
-            Ferramenta desenvolvida por <a href="https://www.linkedin.com/in/joseantonnio/" target="_blank">José Antonio</a>.
-            <br />
-            Feito com &hearts; em São Carlos, a capital da tecnologia. Com o apoio da comunidade.            
-        </p>
-    </div>
 
     @include('layouts.share')
 

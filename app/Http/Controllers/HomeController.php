@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Infection;
+use App\Contributor;
 
 class HomeController extends Controller
 {
@@ -15,10 +16,10 @@ class HomeController extends Controller
             DB::raw('sum(cases) as total_cases, sum(deaths) as total_deaths, sum(serious) as total_serious, sum(recovered) as total_recovered')
         )->first();
 
-        $response = Array();
+        $response = [];
 
         if (!is_null($last_infection)) {
-            $response['last_update'] = $last_infection->updated_at->format("d/m/Y H:m:s");
+            $response['last_update'] = $last_infection->updated_at->format("d/m/Y H:i:s");
         }
 
         if ($infections->count() > 0) {
@@ -26,5 +27,12 @@ class HomeController extends Controller
         }
         
         return view('welcome', $response);
+    }
+
+    public function contributors()
+    {
+        $contributors = Contributor::select('name')->distinct()->get();
+        
+        return view('contributors', ['contributors' => $contributors]);
     }
 }
