@@ -116,8 +116,6 @@
     </p>
 
     @include('layouts.share')
-
-    @include('layouts.news')
 @endsection
 
 @section('scripts')

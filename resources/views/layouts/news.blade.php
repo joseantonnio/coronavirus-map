@@ -8,7 +8,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="text-center text-muted">Nenhuma notícia urgente foi publicada hoje em nosso blog.</p>
+                <ul class="list-group list-group-flush" id="news">
+                    <li class="text-muted">Nenhuma notícia urgente foi publicada hoje em nosso blog hoje</li>
+                </ul>
             </div>
         </div>
     </div>

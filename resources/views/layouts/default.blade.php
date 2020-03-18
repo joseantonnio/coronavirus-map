@@ -71,13 +71,16 @@
         <a class="navbar-brand col-lg-3 col-md-4 col-sm-12 mr-0" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <button class="nav-link btn btn-link" id="menu-toggle"><span data-feather="menu"></span></a>
+                <button class="nav-link btn btn-link" id="menu-toggle"><span data-feather="menu"></span></button>
             </li>
         </ul>
         <input class="form-control form-control-dark w-90 m-2" type="text" id="search" placeholder="Buscar por cidade" aria-label="Buscar por cidade">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <button class="nav-link btn btn-link" data-toggle="modal" data-target=".modal-news"><span data-feather="bell"></span></a>
+                <button class="nav-link btn btn-link" data-toggle="modal" data-target=".modal-news">
+                    <span data-feather="bell"></span>
+                    <span id="news-count" class="badge badge-pill badge-danger" style="display: none; margin: 0 0 0 -8px;">0</span>
+                </button>
             </li>
         </ul>
     </nav>
@@ -178,6 +181,8 @@
 
         </div>
     </div>
+
+    @include('layouts.news')
 
     <!-- Google Ads -->
     <script data-ad-client="ca-pub-6038882219107054" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
