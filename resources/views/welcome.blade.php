@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3">
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group">
-                <a href="#" class="btn btn-sm btn-outline-primary"><span data-feather="plus"></span> Contribuir</a>
+                <a href="{{ route('contribute.create') }}" class="btn btn-sm btn-outline-primary"><span data-feather="plus"></span> Contribuir</a>
                 <button type="button" class="btn btn-sm btn-outline-info" data-toggle="collapse" href="#collapseStats" role="button" aria-expanded="false" aria-controls="collapseStats"><span data-feather="activity"></span> Estatísticas</button>
             </div>
         </div>
