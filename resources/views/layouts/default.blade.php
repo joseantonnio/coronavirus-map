@@ -168,10 +168,10 @@
                 
                 <div class="pt-3 border-top text-center">
                     <p class="text-muted small">
-                        Desenvolvido por <a href="https://www.linkedin.com/in/joseantonnio/" target="_blank">José Antonio</a>. 
+                        Desenvolvido por <a href="https://www.linkedin.com/in/joseantonnio/" target="_blank">José Antonio</a>, com o apoio da comunidade. 
                         Hospedagem por <a href="https://m.do.co/c/965f168e889e" target="_blank">Digital Ocean</a>.
                         <br />
-                        Feito com &hearts; em São Carlos, a capital da tecnologia. Com o apoio da comunidade.            
+                        Feito com &hearts; em São Carlos, a capital da tecnologia. Fique em casa, lave as mãos e evite aglomerações!            
                     </p>
                 </div>
             </main>
