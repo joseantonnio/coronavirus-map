@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
         $the_title = isset($title) ? $title : 'Mapa do Coronavírus no Brasil - Conheça as cidades afetadas';
-        $the_description = isset($description) ? $description : 'Tenha em suas mãos mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!'
+        $the_description = isset($description) ? $description : 'Tenha em suas mãos um mapa do Brasil com todas as áreas e municípios afetados pela doença. Navegue, acompanhe e contribua em tempo real!'
     ?>
     <!-- Primary Meta Tags -->
     <title>{{ $the_title }}</title>
