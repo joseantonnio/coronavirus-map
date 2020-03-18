@@ -46,7 +46,7 @@
         plano de contingência e muito mais acessando o 
         <a href="http://coronavirus.saude.gov.br/" target="_blank">
             portal do Ministério da Saúde
-        <a> 
+        </a> 
         sobre a COVID-19.
     </p>
 
