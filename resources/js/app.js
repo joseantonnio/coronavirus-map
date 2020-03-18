@@ -33,7 +33,7 @@ $("#menu-toggle").click(function(e) {
 });
 
 $.ajax({
-    url: "https://mapadocoronavirus.com/blog/wp-json/wp/v2/posts?tags=4",
+    url: "/blog/wp-json/wp/v2/posts?tags=4",
     type: 'get',
     dataType: 'json',
     success: function(data) {
