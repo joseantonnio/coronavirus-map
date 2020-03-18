@@ -68,7 +68,7 @@
 
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-lg-2 col-md-3 col-sm-12 mr-0" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
+        <a class="navbar-brand col-lg-3 col-md-4 col-sm-12 mr-0" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 <button class="nav-link btn btn-link" id="menu-toggle"><span data-feather="menu"></span></a>
@@ -84,7 +84,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-lg-2 col-md-3 bg-light sidebar" id="sidebar-wrapper">
+            <nav class="col-lg-3 col-md-4 bg-light sidebar" id="sidebar-wrapper">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -119,14 +119,8 @@
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link {{ Route::currentRouteName() != 'contribute.create' ?: 'active' }}" href="{{ route('contribute.create') }}">
-                                <span data-feather="alert-circle"></span>
-                                Realizar correção
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Em breve">
-                                <span data-feather="x-octagon"></span>
-                                Informar um erro
+                                <span data-feather="alert-octagon"></span>
+                                Contribuir
                             </a>
                         </li>
                         <li class="nav-item">
@@ -166,51 +160,10 @@
                             </a>
                         </li>
                     </ul>
-
-                    @if (isset($infections))
-
-                        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                            <span>Estatísticas</span>
-                        </h6>
-                        <ul class="nav flex-column mb-2">
-                            <li class="nav-item">
-                                <span class="nav-link" style="cursor: default;">
-                                    <span class="text-warning" data-feather="activity"></span>
-                                    {{ $infections->total_cases }} casos
-                                </span>
-                            </li>
-                            <li class="nav-item">
-                                <span class="nav-link" style="cursor: default;">
-                                    <span class="text-danger" data-feather="alert-triangle"></span>
-                                    {{ $infections->total_serious }} casos graves
-                                </span>
-                            </li>
-                            <li class="nav-item">
-                                <span class="nav-link" style="cursor: default;">
-                                    <span class="text-success" data-feather="sun"></span>
-                                    {{ $infections->total_recovered }} recuperações
-                                </span>
-                            </li>
-                            <li class="nav-item">
-                                <span class="nav-link" style="cursor: default;">
-                                    <span class="text-dark" data-feather="moon"></span>
-                                    {{ $infections->total_deaths }} mortes
-                                </span>
-                            </li>
-                            @if (isset($last_update))
-                                <li class="nav-item">
-                                    <span class="nav-link" style="cursor: default;" data-toggle="tooltip" data-placement="bottom" title="Última atualização">
-                                        <span class="text-info" data-feather="clock"></span>
-                                        {{ $last_update }}
-                                    </span>
-                                </li>
-                            @endif
-                        </ul>
-                    @endif
                 </div>
             </nav>
 
-            <main role="main" class="col-md-9 col-lg-10 ml-sm-auto px-4">
+            <main role="main" class="col-md-8 col-lg-9 ml-sm-auto px-4">
                 @yield('content')
                 
                 <div class="pt-3 border-top text-center">
