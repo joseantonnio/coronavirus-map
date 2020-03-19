@@ -7,6 +7,36 @@
 
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Gráficos</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-12 mb-sm-3">
+            <input type="text" class="form-control" value="Brasil" disabled>
+            <div class="chart-container">
+                <canvas id="brazilChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-md-5 mb-sm-3">
+            <select type="text" class="form-control" name="state" id="state" placeholder="São Paulo">
+                <option selected>Selecione</option>
+                @foreach ($states_select as $state)
+                    <option value="{{ $state->id }}">{{ $state->name }}</option>
+                @endforeach
+            </select>
+            <div class="chart-container">
+                <canvas id="stateChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-md-5 mb-sm-3">
+            <input type="text" class="form-control" name="city" id="city" placeholder="Ex. São Paulo, SP">
+            <div class="chart-container">
+                <canvas id="cityChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Tabelas de Dados</h1>
     </div>
 
@@ -100,4 +130,10 @@
             </tfoot>
         </table>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <script src="{{ asset('js/data.js') }}"></script>
 @endsection

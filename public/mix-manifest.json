@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/stati.css": "/css/stati.css",
     "/js/contribute.js": "/js/contribute.js",
+    "/js/data.js": "/js/data.js",
     "/js/map.js": "/js/map.js"
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Infection;
+use App\State;
 
 class InfectionController extends Controller
 {
@@ -32,6 +33,8 @@ class InfectionController extends Controller
             ->groupBy(['states.name', 'states.uf'])
             ->get();
 
-        return view('data', ['infections' => $query, 'states' => $states]);
+        $states_select = State::select('id', 'name')->orderBy('name', 'ASC')->get();
+
+        return view('data', ['infections' => $query, 'states' => $states, 'states_select' => $states_select]);
     }
 }
