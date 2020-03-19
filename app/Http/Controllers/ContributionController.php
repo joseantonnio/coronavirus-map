@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\ValidationException;
+
 use App\Rules\Recaptcha;
 use App\Infection;
 use App\Contributor;
+use App\InfectionHistory;
 
-class ContactController extends Controller
+class ContributionController extends Controller
 {
     public function createContribution()
     {
@@ -44,12 +47,23 @@ class ContactController extends Controller
         $infection = Infection::find(intval($request->infection_id));
         $new = "Não";
 
+        $history = new InfectionHistory();
+
         if (empty($infection)) {
             $new = "Sim";
             $infection = new Infection();
             $infection->city_id = $request->city_id;
+        } else {
+            $history->city_id = intval($infection->city_id);
+            $history->cases = intval($infection->cases);
+            $history->serious = intval($infection->serious);
+            $history->deaths = intval($infection->deaths);
+            $history->recovered = intval($infection->recovered);
+            $history->sources = strval($infection->sources);
+            $history->first_case = new \DateTime($infection->first_case);
         }
 
+        $infection->city_id;
         $infection->cases = intval($request->cases);
         $infection->serious = intval($request->serious);
         $infection->deaths = intval($request->deaths);
@@ -63,13 +77,22 @@ class ContactController extends Controller
         } else {
             $infection->sources .= PHP_EOL . PHP_EOL . filter_var($sources, FILTER_SANITIZE_STRING);
         }
-        
+
         if (empty($infection->first_case)) {
             $infection->first_case = $request->first_case;
         }
 
-        $infection->save();
-        $infection->contributors()->attach($contributor);
+        try {
+            $infection->save();
+
+            $history->infection_id = $infection->id;
+            $history->save();
+
+            $infection->contributors()->attach($contributor);
+        } catch (\Exception $e) {
+            Log::error($e);
+            return view('contribute', ['success' => false]);
+        }
 
         $text = "Uma nova contribuição foi enviada!\n"
                 . "<b>Nome do usuário: </b>$request->name\n"
@@ -82,7 +105,7 @@ class ContactController extends Controller
                 . "<b>Novo município afetado: </b>$new\n"
                 . "<b>Fontes: </b>\n"
                 . $request->sources;
- 
+
         if (!\App::environment('local')) {
             \Telegram::sendMessage([
                 'chat_id' => '-1001434079160',
@@ -92,7 +115,8 @@ class ContactController extends Controller
         } else {
             Log::debug($text);
         }
- 
+
         return view('contribute', ['success' => true]);
+        
     }
 }
