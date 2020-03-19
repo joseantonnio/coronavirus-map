@@ -24,8 +24,8 @@ if ($_GET['lat'] != undefined && $_GET['lng'] != undefined) {
     var coronamap = L.map('coronamap', { maxBounds: bounds }).setView([-15.453680, -49.526367], 4);
 }
 
-L.tileLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=7nt6l2Uh87b2LAIsq1Rm', {
-    attribution: 'Mapa pela comunidade &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagens por &copy; <a href="https://www.maptiler.com/copyright/">Map Tiler</a>',
+L.tileLayer('https://maps.wikimedia.org/osm-intl/${z}/${x}/${y}.png', {
+    attribution: 'Mapa pela comunidade &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagens por <a href="https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use">Wikimedia Maps</a>',
     maxZoom: 11,
     minZoom: 4,
     tileSize: 256,
