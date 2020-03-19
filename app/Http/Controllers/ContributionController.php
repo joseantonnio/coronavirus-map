@@ -47,13 +47,12 @@ class ContributionController extends Controller
         $infection = Infection::find(intval($request->infection_id));
         $new = "Não";
 
-        $history = new InfectionHistory();
-
         if (empty($infection)) {
             $new = "Sim";
             $infection = new Infection();
             $infection->city_id = $request->city_id;
         } else {
+            $history = new InfectionHistory();
             $history->city_id = intval($infection->city_id);
             $history->cases = intval($infection->cases);
             $history->serious = intval($infection->serious);
@@ -64,7 +63,6 @@ class ContributionController extends Controller
             $history->contributor_id = !is_null($infection->contributor_id) ? intval($infection->contributor_id) : null;
         }
 
-        $infection->city_id;
         $infection->cases = intval($request->cases);
         $infection->serious = intval($request->serious);
         $infection->deaths = intval($request->deaths);
@@ -87,8 +85,10 @@ class ContributionController extends Controller
         try {
             $infection->save();
 
-            $history->infection_id = $infection->id;
-            $history->save();
+            if (isset($history)) {
+                $history->infection_id = $infection->id;
+                $history->save();
+            }
         } catch (\Exception $e) {
             Log::error($e);
             return view('contribute', ['success' => false]);
