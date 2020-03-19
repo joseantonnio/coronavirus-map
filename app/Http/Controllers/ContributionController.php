@@ -61,6 +61,7 @@ class ContributionController extends Controller
             $history->recovered = intval($infection->recovered);
             $history->sources = strval($infection->sources);
             $history->first_case = new \DateTime($infection->first_case);
+            $history->contributor_id = !is_null($infection->contributor_id) ? intval($infection->contributor_id) : null;
         }
 
         $infection->city_id;
@@ -68,6 +69,7 @@ class ContributionController extends Controller
         $infection->serious = intval($request->serious);
         $infection->deaths = intval($request->deaths);
         $infection->recovered = intval($request->recovered);
+        $infection->contributor_id = $contributor->id;
 
         $sources = strip_tags($request->sources);
         $sources = addslashes($sources);
@@ -87,8 +89,6 @@ class ContributionController extends Controller
 
             $history->infection_id = $infection->id;
             $history->save();
-
-            $infection->contributors()->attach($contributor);
         } catch (\Exception $e) {
             Log::error($e);
             return view('contribute', ['success' => false]);

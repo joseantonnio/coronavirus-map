@@ -13,4 +13,12 @@ class InfectionHistory extends Model
     {
         return $this->belongsTo('App\Infection');
     }
+
+    /**
+     * Get the contributors of the infection history.
+     */
+    public function contributor()
+    {
+        return $this->belongsTo('App\Contributor');
+    }
 }
