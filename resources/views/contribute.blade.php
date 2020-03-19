@@ -30,9 +30,13 @@
     <div class="alert alert-success">
         Sua contribuição foi enviada com sucesso. Muito obrigado!
     </div>
+@elseif (isset($success) && !$success)
+    <div class="alert alert-danger">
+        Não foi possível armazenar a sua contribuição. Por favor, tente novamente...
+    </div>
 @endif
 
-<form action="/contribute" method="POST">
+<form action="{{ route('contribute.store') }}" method="POST">
     @csrf
     <input type="hidden" name="infection_id" id="infection_id">
     <input type="hidden" name="city_id" id="city_id">
