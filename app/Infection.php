@@ -30,4 +30,12 @@ class Infection extends Model
     {
         return $this->belongsToMany('App\Contributor');
     }
+
+    /**
+     * Get the histories of the infection count.
+     */
+    public function histories()
+    {
+        return $this->belongsToMany('App\InfectionHistory');
+    }
 }
