@@ -26,7 +26,11 @@ class SetCityIdUniqueOnInfectionsTable extends Migration
     public function down()
     {
         Schema::table('infections', function (Blueprint $table) {
-            $table->unsignedBigInteger('city_id')->change();
+            $table->dropForeign(['city_id']);
+            $table->dropUnique(['city_id']);
+            $table->foreign('city_id')
+                ->references('id')->on('cities')
+                ->onDelete('cascade');
         });
     }
 }
