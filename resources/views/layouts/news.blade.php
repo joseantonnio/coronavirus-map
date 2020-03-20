@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <ul class="list-group list-group-flush" id="news">
-                    <li class="text-muted">Nenhuma notícia urgente foi publicada hoje em nosso blog hoje</li>
+                    <li class="list-group-item text-muted">Nenhuma notícia urgente foi publicada hoje em nosso blog hoje</li>
                 </ul>
             </div>
         </div>

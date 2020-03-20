@@ -47,7 +47,7 @@ $.ajax({
                     first = false;
                     $news.innerHTML = "";
                 }
-                $news.innerHTML += '<li class="list-group-item"><a class="h7 text-dark" href="' + element.link + '">' + element.title.rendered + '</a></li>';
+                $news.innerHTML += '<li class="list-group-item"><a class="h7" href="' + element.link + '">' + element.title.rendered + '</a></li>';
                 news_count++;
             }
         });
