@@ -31,7 +31,7 @@ class ContributionController extends Controller
             'sources' => 'required|string',
             'email' => 'required|email',
             'infection_id' => 'required',
-            'recaptcha_response' => ['required', new Recaptcha]
+            'g-recaptcha-response' => ['required', new Recaptcha]
         ]);
 
         $contributor = Contributor::firstOrNew([

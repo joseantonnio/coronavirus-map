@@ -40,7 +40,6 @@
     @csrf
     <input type="hidden" name="infection_id" id="infection_id">
     <input type="hidden" name="city_id" id="city_id">
-    <input type="hidden" name="recaptcha_response" id="recaptcha_response" {{ !\App::environment('local') ?: 'value=recaptcha' }}>
 
     <div class="row">
         <div class="form-group col-12">
@@ -94,7 +93,11 @@
             </small>
         </div>
 
-        <div class="form-group col-6 my-3">
+        <div class="form-group col-12">
+            <div class="g-recaptcha" data-sitekey="6LeFnuIUAAAAAE4a0N2VzmCRBFlIEHuBMzNCaGb1"></div>
+        </div>
+
+        <div class="form-group col-6">
             <button type="submit" class="btn btn-primary" id="send" disabled>Enviar contribuição</button>
         </div>
     </div>
@@ -102,15 +105,6 @@
 @endsection
 
 @section('scripts')
-<script src="https://www.google.com/recaptcha/api.js?render=6LeRzeEUAAAAAHSqv2f7crqwzUNyyxJGYl-wQ6Vc"></script>
-<script>
-grecaptcha.ready(function() {
-    grecaptcha.execute('6LeRzeEUAAAAAHSqv2f7crqwzUNyyxJGYl-wQ6Vc', {action: 'homepage'}).then(function (token) {
-        var recaptchaResponse = document.getElementById('recaptcha_response');
-        recaptchaResponse.value = token;
-    });
-});
-</script>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="{{ asset('js/contribute.js') }}"></script>
 @endsection
