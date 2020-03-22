@@ -151,8 +151,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.linkedin.com/in/joseantonnio/" target="_blank">
-                                <span data-feather="mail"></span>
+                            <a class="nav-link" href="https://www.twitter.com/junnykx/" target="_blank">
+                                <span data-feather="twitter"></span>
                                 Contato
                             </a>
                         </li>
@@ -160,6 +160,24 @@
                             <a class="nav-link" href="{{ route('coffee') }}" target="_blank">
                                 <span data-feather="coffee"></span>
                                 Me pague um café
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Parceiros</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://labs.wesleycota.com/sarscov2/br/" target="_blank">
+                                <span data-feather="check-circle"></span>
+                                Mapa do Wesley Cota
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://covid19br.github.io/" target="_blank">
+                                <span data-feather="check-circle"></span>
+                                Oservatório COVID-19
                             </a>
                         </li>
                     </ul>
