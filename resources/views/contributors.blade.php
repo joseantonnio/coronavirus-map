@@ -13,6 +13,7 @@
 <p>Os principais colaboradores são os <strong>doadores</strong>, que ajudam ou ajudaram com os custos para manter este serviço:</p>
 
 <ul>
+    <li>Marcelo Mariano, em 19 de março de 2020</li>
     <li><a href="{{ route('coffee') }}">Seja um doador e ajude a manter o mapa on-line!</a></li>
 </ul>
 
