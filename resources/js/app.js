@@ -3,6 +3,8 @@ require('./bootstrap');
 feather.replace();
 moment.locale('pt-br');
 
+$('.modal-warning').modal("show");
+
 $(document).ajaxStart(function() {
     $.LoadingOverlay("show", {
         image: "",
