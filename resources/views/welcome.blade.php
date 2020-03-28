@@ -118,6 +118,8 @@
     @include('layouts.share')
 @endsection
 
+@include('layouts.warning')
+
 @section('scripts')
 <script src="{{ asset('js/map.js') }}"></script>
 @endsection
