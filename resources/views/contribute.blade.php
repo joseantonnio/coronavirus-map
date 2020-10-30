@@ -94,7 +94,7 @@
         </div>
 
         <div class="form-group col-12">
-            <div class="g-recaptcha" data-sitekey="6LeFnuIUAAAAAE4a0N2VzmCRBFlIEHuBMzNCaGb1"></div>
+            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_PUBLIC', '') }}"></div>
         </div>
 
         <div class="form-group col-6">
